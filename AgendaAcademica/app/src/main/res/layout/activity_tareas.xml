@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp" android:background="#FAFAFA">
+        <TextView android:id="@+id/tvMateria" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Tareas" android:textSize="23sp" android:textStyle="bold" android:textColor="#263238" />
+        <TextView android:id="@+id/tvResumen" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="0 de 0 completadas" android:textColor="#546E7A" android:paddingBottom="8dp" />
+        <EditText android:id="@+id/etTitulo" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Título de la tarea *" android:inputType="textCapSentences" />
+        <EditText android:id="@+id/etFecha" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Fecha de entrega (AAAA-MM-DD) *" android:inputType="date" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Prioridad" android:textColor="#37474F" />
+        <Spinner android:id="@+id/spPrioridad" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <Button android:id="@+id/btnGuardarTarea" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Agregar tarea" />
+        <EditText android:id="@+id/etBuscarTarea" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Buscar tarea por título" android:inputType="text" android:layout_marginTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Marca la casilla para completar una tarea." android:textSize="12sp" android:textColor="#546E7A" android:paddingTop="4dp" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvTareas" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:nestedScrollingEnabled="false" android:minHeight="100dp" />
+        <Button android:id="@+id/btnVolver" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Volver a materias" />
+    </LinearLayout>
+</ScrollView>

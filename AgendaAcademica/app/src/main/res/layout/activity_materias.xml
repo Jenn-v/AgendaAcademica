@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="16dp" android:background="#FAFAFA">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Agenda académica" android:textSize="24sp" android:textStyle="bold"
+        android:textColor="#263238" android:layout_marginBottom="12dp" />
+    <EditText android:id="@+id/etNombre" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Nombre de la materia *" android:inputType="textCapWords" />
+    <EditText android:id="@+id/etDocente" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Docente" android:inputType="textCapWords" />
+    <Button android:id="@+id/btnGuardar" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Agregar materia" />
+    <EditText android:id="@+id/etBuscarMateria" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Buscar materia por nombre" android:inputType="text" android:layout_marginTop="8dp" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Toca una materia para editarla. El resumen muestra tareas pendientes."
+        android:textSize="12sp" android:textColor="#546E7A" android:paddingTop="4dp" android:paddingBottom="4dp" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvMaterias"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:layout_marginTop="4dp" />
+</LinearLayout>
