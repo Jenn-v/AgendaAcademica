@@ -31,8 +31,6 @@ Los archivos se crean después de guardar datos. El almacenamiento privado se bo
 - `dao`: DAO, MateriaDAO, TareaDAO, JsonDAOBase, MateriaDAOJson, TareaDAOJson, DAOFactory.
 - `ui`: Activities y adapters.
 
-## Relación con el ZIP original
-El proyecto original era una aplicación Java de consola con Estudiante y Curso. Android necesita Activities, layouts XML, un manifiesto y dependencias Android; por eso la estructura se adapta, pero se conserva el patrón DAO y la lectura/escritura JSON genérica.
 
 ## Actividades adicionales 6 y 7
 - Se incluyen `MateriaDAOMemoria` y `TareaDAOMemoria` para probar el DAO sin archivos. Para alternar temporalmente, cambia las dos asignaciones dentro del constructor de `DAOFactory` por `new MateriaDAOMemoria()` y `new TareaDAOMemoria()`. En memoria los datos no persisten al cerrar la app; vuelve a las clases JSON para la entrega principal.
