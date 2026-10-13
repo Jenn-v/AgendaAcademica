@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "sv.edu.ufg.agenda.app-mergeReleaseResources-23:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "/home/fidev/.gradle/caches/9.2.0/transforms/be954b8af8e2229134073e09571795fb/transformed/appcompat-1.7.0/res/values-watch-v21/values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -32,8 +32,7 @@ public class MateriaAdapter extends RecyclerView.Adapter<MateriaAdapter.Fila> {
     }
     @Override public void onBindViewHolder(@NonNull Fila fila, int posicion) {
         Materia materia = datos.get(posicion);
-        fila.tvTexto.setText(materia.getNombre() + "
-Docente: " + (materia.getDocente() == null || materia.getDocente().trim().isEmpty() ? "No indicado" : materia.getDocente()));
+        fila.tvTexto.setText(materia.getNombre() + "\nDocente: " + (materia.getDocente() == null || materia.getDocente().trim().isEmpty() ? "No indicado" : materia.getDocente()));
         int totalPendientes = pendientes.containsKey(materia.getId()) ? pendientes.get(materia.getId()) : 0;
         fila.tvPendientes.setText("Tareas pendientes: " + totalPendientes);
         fila.itemView.setOnClickListener(v -> acciones.editar(materia));

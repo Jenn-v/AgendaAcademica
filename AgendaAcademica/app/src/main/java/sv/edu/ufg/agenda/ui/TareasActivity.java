@@ -48,7 +48,7 @@ public class TareasActivity extends AppCompatActivity implements TareaAdapter.Ac
         findViewById(R.id.btnVolver).setOnClickListener(v -> finish()); refrescar();
     }
     private boolean fechaValida(String texto) {
-        if (texto == null || !texto.matches("\d{4}-\d{2}-\d{2}")) return false;
+        if (texto == null || !texto.matches("\\d{4}-\\d{2}-\\d{2}")) return false;
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd", Locale.US); formato.setLenient(false);
         try { Date fecha = formato.parse(texto); return fecha != null && formato.format(fecha).equals(texto); }
         catch (ParseException ex) { return false; }

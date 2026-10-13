@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "sv.edu.ufg.agenda.app-release-25:/layout_item_tarea.xml.flat",
+        "source": "sv.edu.ufg.agenda.app-main-26:/layout/item_tarea.xml"
+    },
+    {
+        "merged": "sv.edu.ufg.agenda.app-release-25:/layout_item_materia.xml.flat",
+        "source": "sv.edu.ufg.agenda.app-main-26:/layout/item_materia.xml"
+    },
+    {
+        "merged": "sv.edu.ufg.agenda.app-release-25:/layout_activity_materias.xml.flat",
+        "source": "sv.edu.ufg.agenda.app-main-26:/layout/activity_materias.xml"
+    },
+    {
+        "merged": "sv.edu.ufg.agenda.app-release-25:/layout_activity_tareas.xml.flat",
+        "source": "sv.edu.ufg.agenda.app-main-26:/layout/activity_tareas.xml"
+    }
+]
