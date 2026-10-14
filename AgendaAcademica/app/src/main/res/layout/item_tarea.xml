@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"
-    android:padding="10dp" android:layout_marginTop="5dp" android:background="#FFFFFF">
-    <CheckBox android:id="@+id/cbCompletada" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="Tarea" android:textColor="#263238" android:textSize="16sp" />
-    <TextView android:id="@+id/tvDetalle" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:textColor="#546E7A" android:textSize="13sp" />
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-        <Button android:id="@+id/btnEditarTarea" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Editar" />
-        <Button android:id="@+id/btnEliminarTarea" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Eliminar" />
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginTop="6dp" android:layout_marginBottom="6dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingStart="8dp" android:paddingEnd="8dp"
+        android:paddingTop="8dp" android:paddingBottom="4dp">
+        <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/cbCompletada"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Tarea" android:textColor="@color/texto" android:textSize="16sp" android:textStyle="bold"
+            android:paddingStart="4dp" />
+        <TextView android:id="@+id/tvDetalle" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="12dp" android:layout_marginEnd="8dp"
+            android:textColor="@color/texto_secundario" android:textSize="13sp"
+            android:drawablePadding="8dp" android:gravity="center_vertical"
+            app:drawableStartCompat="@drawable/ic_calendario" app:drawableTint="@color/texto_secundario" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="end" android:layout_marginTop="4dp">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnEliminarTarea"
+                style="@style/BotonPeligro"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Eliminar" app:icon="@drawable/ic_eliminar" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnEditarTarea"
+                style="@style/Widget.Material3.Button.TextButton.Icon"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Editar" app:icon="@drawable/ic_editar" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

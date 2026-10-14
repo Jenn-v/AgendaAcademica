@@ -1,9 +1,81 @@
-<resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">#455A64</item>
-        <item name="android:fontFamily">sans</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">#ECEFF1</item>
-        <item name="android:navigationBarColor">#FFFFFF</item>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primario</item>
+        <item name="colorOnPrimary">@color/texto_sobre_primario</item>
+        <item name="colorPrimaryContainer">@color/primario_suave</item>
+        <item name="colorOnPrimaryContainer">@color/primario_oscuro</item>
+        <item name="colorSecondaryContainer">@color/primario_suave</item>
+        <item name="colorOnSecondaryContainer">@color/primario_oscuro</item>
+        <item name="colorAccent">@color/primario</item>
+        <item name="colorError">@color/peligro</item>
+        <item name="android:colorBackground">@color/fondo</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="android:statusBarColor">@color/primario</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/superficie</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+        <item name="textInputStyle">@style/CampoTexto</item>
+        <item name="materialCardViewStyle">@style/Tarjeta</item>
+    </style>
+
+    <style name="CampoTexto" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/primario</item>
+        <item name="startIconTint">@color/texto_secundario</item>
+    </style>
+
+    <style name="Tarjeta" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/superficie</item>
+    </style>
+
+    <style name="Encabezado">
+        <item name="android:background">@drawable/fondo_encabezado</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">28dp</item>
+    </style>
+
+    <style name="TituloEncabezado">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/texto_sobre_primario</item>
+    </style>
+
+    <style name="SubtituloEncabezado">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/texto_sobre_primario_suave</item>
+        <item name="android:paddingTop">4dp</item>
+    </style>
+
+    <style name="TituloSeccion">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/texto</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="Ayuda">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/texto_secundario</item>
+    </style>
+
+    <style name="BotonPrincipal" parent="Widget.Material3.Button">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <style name="BotonPeligro" parent="Widget.Material3.Button.TextButton.Icon">
+        <item name="android:textColor">@color/peligro</item>
+        <item name="iconTint">@color/peligro</item>
+        <item name="rippleColor">#33DC2626</item>
     </style>
 </resources>

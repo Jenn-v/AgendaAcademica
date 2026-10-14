@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primario">#4F46E5</color>
+    <color name="primario_oscuro">#3730A3</color>
+    <color name="primario_suave">#E0E7FF</color>
+    <color name="fondo">#F4F5FB</color>
+    <color name="superficie">#FFFFFF</color>
+    <color name="borde">#E5E7EB</color>
+    <color name="texto">#1F2937</color>
+    <color name="texto_secundario">#6B7280</color>
+    <color name="texto_sobre_primario">#FFFFFF</color>
+    <color name="texto_sobre_primario_suave">#C7D2FE</color>
+    <color name="peligro">#DC2626</color>
+    <color name="pendiente_fondo">#FEF3C7</color>
+    <color name="pendiente_texto">#92400E</color>
+</resources>

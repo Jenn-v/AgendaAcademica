@@ -1,22 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:padding="16dp" android:background="#FAFAFA">
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="Agenda académica" android:textSize="24sp" android:textStyle="bold"
-        android:textColor="#263238" android:layout_marginBottom="12dp" />
-    <EditText android:id="@+id/etNombre" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Nombre de la materia *" android:inputType="textCapWords" />
-    <EditText android:id="@+id/etDocente" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Docente" android:inputType="textCapWords" />
-    <Button android:id="@+id/btnGuardar" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="Agregar materia" />
-    <EditText android:id="@+id/etBuscarMateria" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="Buscar materia por nombre" android:inputType="text" android:layout_marginTop="8dp" />
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="Toca una materia para editarla. El resumen muestra tareas pendientes."
-        android:textSize="12sp" android:textColor="#546E7A" android:paddingTop="4dp" android:paddingBottom="4dp" />
+    android:orientation="vertical" android:background="@color/fondo">
+
+    <!-- Encabezado -->
+    <LinearLayout style="@style/Encabezado"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView style="@style/TituloEncabezado"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Agenda académica" />
+        <TextView style="@style/SubtituloEncabezado"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Organiza tus materias y sus tareas" />
+    </LinearLayout>
+
+    <!-- Formulario -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="-16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+            <TextView style="@style/TituloSeccion"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Materia" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Nombre de la materia *" app:startIconDrawable="@drawable/ic_libro">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etNombre"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textCapWords" android:imeOptions="actionNext" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Docente" app:startIconDrawable="@drawable/ic_persona">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etDocente"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="textCapWords" android:imeOptions="actionDone" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardar"
+                style="@style/BotonPrincipal"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Agregar materia" app:icon="@drawable/ic_agregar" app:iconGravity="textStart" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Búsqueda -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="16dp"
+        android:hint="Buscar materia" app:startIconDrawable="@drawable/ic_buscar"
+        app:endIconMode="clear_text" app:boxBackgroundColor="@color/superficie">
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etBuscarMateria"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:inputType="text" android:imeOptions="actionSearch" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView style="@style/Ayuda"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="20dp" android:layout_marginEnd="20dp" android:layout_marginTop="6dp"
+        android:text="Toca una materia para editarla." />
+
     <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvMaterias"
         android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
-        android:layout_marginTop="4dp" />
+        android:clipToPadding="false" android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingTop="8dp" android:paddingBottom="16dp" />
 </LinearLayout>

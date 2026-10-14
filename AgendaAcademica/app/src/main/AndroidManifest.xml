@@ -6,8 +6,8 @@
         android:label="Agenda Académica"
         android:theme="@style/AppTheme"
         android:supportsRtl="true">
-        <activity android:name=".ui.TareasActivity" android:exported="false" />
-        <activity android:name=".ui.MateriasActivity" android:exported="true">
+        <activity android:name=".ui.TareasActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ui.MateriasActivity" android:exported="true" android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,1 +1,20 @@
-.idea
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Gradle
+.gradle/
+build/
+
+# Configuración local (ruta del SDK)
+local.properties
+
+# Archivos generados
+*.apk
+*.aab
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Sistema
+.DS_Store

@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true" android:background="@color/fondo">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="16dp" android:background="#FAFAFA">
-        <TextView android:id="@+id/tvMateria" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="Tareas" android:textSize="23sp" android:textStyle="bold" android:textColor="#263238" />
-        <TextView android:id="@+id/tvResumen" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="0 de 0 completadas" android:textColor="#546E7A" android:paddingBottom="8dp" />
-        <EditText android:id="@+id/etTitulo" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:hint="Título de la tarea *" android:inputType="textCapSentences" />
-        <EditText android:id="@+id/etFecha" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:hint="Fecha de entrega (AAAA-MM-DD) *" android:inputType="date" />
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Prioridad" android:textColor="#37474F" />
-        <Spinner android:id="@+id/spPrioridad" android:layout_width="match_parent" android:layout_height="wrap_content" />
-        <Button android:id="@+id/btnGuardarTarea" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Agregar tarea" />
-        <EditText android:id="@+id/etBuscarTarea" android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:hint="Buscar tarea por título" android:inputType="text" android:layout_marginTop="6dp" />
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Marca la casilla para completar una tarea." android:textSize="12sp" android:textColor="#546E7A" android:paddingTop="4dp" />
-        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvTareas" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:nestedScrollingEnabled="false" android:minHeight="100dp" />
-        <Button android:id="@+id/btnVolver" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Volver a materias" />
+        android:orientation="vertical" android:paddingBottom="16dp">
+
+        <!-- Encabezado -->
+        <LinearLayout style="@style/Encabezado"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="8dp" android:paddingTop="12dp">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnVolver"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:contentDescription="Volver a materias"
+                app:icon="@drawable/ic_volver" app:iconTint="@color/texto_sobre_primario"
+                app:iconSize="24dp" />
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:orientation="vertical" android:layout_marginStart="4dp">
+                <TextView android:id="@+id/tvMateria" style="@style/TituloEncabezado"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textSize="22sp" android:text="Tareas" />
+                <TextView android:id="@+id/tvResumen" style="@style/SubtituloEncabezado"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="0 de 0 completadas" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Formulario -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="-16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView style="@style/TituloSeccion"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Tarea" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Título de la tarea *" app:startIconDrawable="@drawable/ic_tarea">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etTitulo"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="textCapSentences" android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Fecha de entrega *" app:placeholderText="AAAA-MM-DD"
+                    app:helperText="Formato: AAAA-MM-DD (ej. 2026-10-31)"
+                    app:startIconDrawable="@drawable/ic_calendario">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/etFecha"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="date" android:imeOptions="actionDone" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:layout_marginBottom="6dp"
+                    android:text="Prioridad" android:textSize="13sp" android:textColor="@color/texto_secundario"
+                    android:drawablePadding="6dp" android:gravity="center_vertical"
+                    app:drawableStartCompat="@drawable/ic_bandera" app:drawableTint="@color/texto_secundario" />
+                <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@drawable/fondo_selector" android:paddingStart="4dp">
+                    <Spinner android:id="@+id/spPrioridad"
+                        android:layout_width="match_parent" android:layout_height="52dp" />
+                </FrameLayout>
+                <com.google.android.material.button.MaterialButton android:id="@+id/btnGuardarTarea"
+                    style="@style/BotonPrincipal"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Agregar tarea" app:icon="@drawable/ic_agregar" app:iconGravity="textStart" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Búsqueda -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="16dp"
+            android:hint="Buscar tarea" app:startIconDrawable="@drawable/ic_buscar"
+            app:endIconMode="clear_text" app:boxBackgroundColor="@color/superficie">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etBuscarTarea"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="text" android:imeOptions="actionSearch" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView style="@style/Ayuda"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="20dp" android:layout_marginEnd="20dp" android:layout_marginTop="6dp"
+            android:text="Marca la casilla para completar una tarea. Ordenadas por fecha de entrega." />
+
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvTareas"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" android:minHeight="100dp"
+            android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="4dp"
+            android:clipToPadding="false" />
     </LinearLayout>
 </ScrollView>
